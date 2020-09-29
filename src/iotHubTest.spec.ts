@@ -74,12 +74,12 @@ describe("iot hub from property to query result timing failure", () => {
     const uuid2 = uuidv4();
     await updateDeviceTwinProperties(device1, { withwait: uuid1 });
     await updateDeviceTwinProperties(device2, { withwait: uuid2 });
-    await waitForPropertyUpdate(); // await for updated properties to be reflected in the query
+    await waitForPropertyUpdate(); // wait for updated properties to be reflected in the query
     const twins = await twinsByQueryFromIotHub(
       "SELECT * FROM devices WHERE IS_DEFINED(properties.reported.withwait)"
     );
     expect(twins.map((t) => t.properties.reported.withwait)).toEqual(
       expect.arrayContaining([uuid1, uuid2])
     );
-  });
+  };);
 });
