@@ -1,1 +1,4 @@
 = Sample for using Jest with Azure IoT-Hub
+
+
+In order to run the tests you need to copy the ".env.sample" file, rename the copy to ".env" and provide the connection string for an IoT-Hub and two devices.
