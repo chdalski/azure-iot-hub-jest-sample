@@ -81,5 +81,5 @@ describe("iot hub from property to query result timing failure", () => {
     expect(twins.map((t) => t.properties.reported.withwait)).toEqual(
       expect.arrayContaining([uuid1, uuid2])
     );
-  };);
+  });
 });
